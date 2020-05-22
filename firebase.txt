@@ -1,0 +1,78 @@
+// LER DADOS
+
+// on() -> permanece ouvindo aplicação
+// on() === addEventListener -> (evento, função, função de erro)
+videos.on('value', (snapshot) => {
+  // .val() -> traz valor de snapshot (conteúdo da tabela videos)
+  console.log('snapshot: ', snapshot.val())
+}, (error) => {
+  console.log('error: ', error)
+})
+
+// ==============================================
+
+// ADICIONAR DADOS
+
+// set sobrescreve videos
+videos.set({
+  id: '',
+  title: ''
+})
+
+// sem sobrescrever
+const videoJS = videos.push()
+
+videoJS.set({
+  id: '12345',
+  title: 'Vídeo Teste 01'
+})
+
+// ==============================================
+
+// ALTERAR DADOS
+
+const anyVideo = videos.child('-M7tmCcE1VrSmZ-oMZx7')
+
+anyVideo.update({
+  title: 'Vídeo Teste 02 Alterado Novamente'
+})
+
+// ==============================================
+
+// DELETAR DADOS
+
+videos.child('...').update({
+  id: null,
+  title: null
+})
+
+// ou
+
+db.ref('videos/-M7tme4xQKg78wOzgOl_').update({
+  id: null
+})
+
+// remove filhos da referência -> ex: humor
+
+db.ref('categories/humor').remove()
+
+
+// ==============================================
+
+// ORDENAR DADOS exemplos
+
+db.ref('videos').on('value', (snapshot) => {
+    const videos = snapshot.val()
+    const ordered = Object.keys(videos)
+      .sort((a, b) => videos[a].title < videos[b].title ? -1 : 1)
+      .map((id) => ({
+        id,
+        title: videos[id].title
+      }))
+
+    ordered.forEach((video) => dispatch(addVideo(video)))
+
+
+db.ref('videos').orderByChild('title').on('child_added', (child) => {
+  dispatch(addVideo(child.val()))
+})
