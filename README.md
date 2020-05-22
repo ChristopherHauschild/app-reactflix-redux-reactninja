@@ -1,4 +1,6 @@
-# React```diff - flix``` :movie_camera:
+# React```diff
+- flix
+``` :movie_camera:
 
 Aplicação desenvolvida durante o terceiro módulo do curso React.js Ninja - React Completo, disponibilizado por <a href="https://github.com/fdaciuk">Fernando Daciuk</a> na platafaforma Udemy. O curso visa a capacitação para atuar no mercado de trabalho com React.js, oferecendo conteúdos que visam trabalhar os fundamentos dessa biblioteca JS além do desenvolvimento de aplicações estruturadas com a mesma.
 
