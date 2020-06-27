@@ -1,9 +1,11 @@
 # Reactflix :movie_camera:
 
+<p align="justify">
 Aplicação desenvolvida durante o terceiro módulo do curso React.js Ninja - React Completo, disponibilizado por <a href="https://github.com/fdaciuk">Fernando Daciuk</a> na platafaforma Udemy. O curso visa a capacitação para atuar no mercado de trabalho com React.js, oferecendo conteúdos que visam trabalhar os fundamentos dessa biblioteca JS além do desenvolvimento de aplicações estruturadas com a mesma.
 
 A aplicação consiste num player que permite ao usuário cadastrar de forma dinâmica vídeos do plataforma Youtube e partir do link do mesmo o assistir como single. A aplicação introduziu aos conteúdos do curso a persistência de dados utilizando o banco de dados <strong><i>Firebase</i></strong>.
 O foco principal do capítulo é a biblioteca <strong><i>Redux</i></strong>, responsável por administrar os estados da aplicação.
+</p>
 
 <hr>
 <p align="center">
